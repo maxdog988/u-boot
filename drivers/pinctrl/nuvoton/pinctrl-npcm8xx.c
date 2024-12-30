@@ -33,6 +33,7 @@
 #define MFSEL6		0x274
 #define MFSEL7		0x278
 
+
 /* GPIO register offsets */
 #define GPIO_POL	0x08 /* Polarity */
 #define GPIO_DOUT	0x0c /* Data OUT */
@@ -970,8 +971,6 @@ static int npcm8xx_pinconf_set(struct udevice *dev, unsigned int selector,
 
 static void npcm8xx_pinctrl_clear_events(struct npcm8xx_pinctrl_priv *priv)
 {
-	void __iomem *base;
-	int i;
 
 	for (i = 0; i < NPCM8XX_NUM_GPIO_BANK; i++) {
 		base = priv->gpio_base + (0x1000 * i);
